@@ -1,11 +1,14 @@
 import json
 import re
+import pandas as pd
+import locale
 
 from flask import Flask, jsonify, make_response
 from flask import request
 
 app = Flask(__name__)
 
+locale.setlocale(locale.LC_ALL, 'es_ES.utf8')
 
 @app.route('/test', methods=['POST', 'GET'])
 def get_test():
@@ -66,7 +69,7 @@ def best_lenders(req):
                                               'text': {
                                                   'text': [
                                                       'A continuación te muestro los mejores préstamos que te ofrecen ' + str(
-                                                          round(amount, 0)) + '€'
+                                                          int(amount)) + '€'
                                                   ]
                                               }
                                           },
@@ -139,63 +142,36 @@ def best_lenders(req):
 
     if amount <= 50000:
         print('Amount between 300 and 50.000€')
+
         response = []
+
         response.append({'text': {
                               'text': [
-                                  'A continuación te muestro los mejores préstamos que te ofrecen ' + str(
-                                      round(amount,0)) + '€'
+                                  'A continuación te muestro los mejores préstamos que te ofrecen ' +
+                                  '{:n}'.format(amount) + '€'
                               ]}})
 
-        if 6000 <= amount <= 50000:
-            print ('Cetelem added')
-            response.append({
-              'card': {
-                  'title': 'Cetelem',
-                  'subtitle': 'Hasta 50.000€ 8 años \n TAE desde 6,12% \n Online y sin comisiones',
-                  'imageUri': 'https://s3-eu-west-1.amazonaws.com/aldachatbot/cetelem.png',
-                  'buttons': [
-                      {
-                          'text': 'Seleccionar',
-                          'postback': 'https://www.cetelem.es/'
-                      },
-                      {
-                          'text': 'Más información',
-                          'postback': 'https://www.cetelem.es/'
-                      }]}})
+        lenders_df = pd.read_csv('https://s3-eu-west-1.amazonaws.com/aldachatbot/lenders.csv', delimiter=";", header=0)
 
-        if 4000 <= amount <= 15000:
-            print('Cofidis added')
-            response.append({
-              'card': {
-                  'title': 'Cofidis',
-                  'subtitle': 'Hasta 15.000€ 8 años \n TAE desde 6,12% \n Online y sin comisiones',
-                  'imageUri': 'https://s3-eu-west-1.amazonaws.com/aldachatbot/cofidis.png',
-                  'buttons': [
-                      {
-                          'text': 'Seleccionar',
-                          'postback': 'https://www.cofidis.es/'
-                      },
-                      {
-                          'text': 'Más información',
-                          'postback': 'https://www.cofidis.es/'
-                      }]}})
-
-        if 500 <= amount <= 5000:
-            print('Creditea added')
-            response.append({
-              'card': {
-                  'title': 'Creditea',
-                  'subtitle': 'Hasta 5.000€ 3 años \n TAE desde 24,90% \n Online y sin comisiones',
-                  'imageUri': 'https://s3-eu-west-1.amazonaws.com/aldachatbot/creditea.png',
-                  'buttons': [
-                      {
-                          'text': 'Seleccionar',
-                          'postback': 'https://www.creditea.es/'
-                      },
-                      {
-                          'text': 'Más información',
-                          'postback': 'https://www.creditea.es/'
-                      }]}})
+        for index, row in lenders_df.iterrows():
+            print("Checking " + row["Lender"])
+            if row['Min_Amt'] <= amount <= row['Max_Amt']:
+                print('Including ' + row['Lender'])
+                response.append({
+                    'card': {
+                        'title': row['Lender'],
+                        'subtitle': 'Hasta ' + '{:n}'.format(row['Max_Amt']) + "€ \n TAE desde "
+                                    + str(row['Min_TAE']) + "% \n " + row['Subtitle'],
+                        'imageUri': row['Image_url'],
+                        'buttons': [
+                            {
+                                'text': 'Seleccionar',
+                                'postback': row['Url']
+                            },
+                            {
+                                'text': 'Más información',
+                                'postback': row['Url']
+                            }]}})
 
         response.append({
             'quickReplies': {
@@ -218,8 +194,8 @@ def best_lenders(req):
                              'quickReplies': {
                                  'title': 'Ninguna entidad ofrece más de 60.000€ sin un aval hipotecario',
                                  'quickReplies': [
-                                     'Quiero 50.000€',
-                                     'Quiero menos de 50.000€',
+                                     'Quiero 60.000€',
+                                     'Quiero menos de 60.000€',
                                      'Ayúdame'
                                  ]
                              }

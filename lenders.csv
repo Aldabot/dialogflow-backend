@@ -1,0 +1,11 @@
+Lender;Min_Amt;Max_Amt;Min_TAE;Max_TAE;Min_Term;Max_Term;Units_Term;Url;Image_url;Subtitle
+Cetelem;6000;60000;6.12;17.11;3;96;month;https://www.cetelem.es/;https://s3-eu-west-1.amazonaws.com/aldachatbot/cetelem.png;Online y sin comisiones
+Cofidis;4000;15000;6.12;10.41;12;96;year;https://www.cofidis.es/;https://s3-eu-west-1.amazonaws.com/aldachatbot/cofidis.png;Online y sin comisiones
+Creditea;500;5000;42.41;N/A;6;36;month;https://creditea.com/;https://s3-eu-west-1.amazonaws.com/aldachatbot/creditea.png;Online y sin comisiones
+EVO Finance;6000;30000;7.23;N/A;12;96;month;https://www.evofinance.com/;https://s3-eu-west-1.amazonaws.com/aldachatbot/evoFinance.png;Online y sin comisiones
+ING Direct;6000;60000;6.11;11.52;12;72;month;https://www.ing.es/prestamos-personales/simulador.html;https://s3-eu-west-1.amazonaws.com/aldachatbot/ing.png;Online y sin comisiones
+Quebueno;50;300;0;N/A;1;46;day;https://www.quebueno.es;https://s3-eu-west-1.amazonaws.com/aldachatbot/quebueno.png;Online y sin comisiones
+Solcredito;100;1000;0;N/A;60;90;day;https://www.solcredito.es/;https://s3-eu-west-1.amazonaws.com/aldachatbot/solcredito.png;Online y sin comisiones
+Vivus;50;300;0;0;7;30;day;https://www.vivus.es/;https://s3-eu-west-1.amazonaws.com/aldachatbot/vivus.png;Online y sin comisiones
+Wonga;50;300;0;N/A;1;60;day;https://www.wonga.es/;https://s3-eu-west-1.amazonaws.com/aldachatbot/wonga.png;Online y sin comisiones
+Younited;1000;40000;5.18;7.07;2;6;year;https://es.younited-credit.com/;https://s3-eu-west-1.amazonaws.com/aldachatbot/younited.png;Online y sin comisiones
