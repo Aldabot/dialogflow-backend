@@ -9,9 +9,8 @@ This is the project containing Alda's webhook
 #### Deployment
 The deployment of the webhook is performed by using [zappa](https://github.com/Miserlou/Zappa)
 
-``
-$ zappa init
+```shell
+$ zappa init  
 $ zappa deploy
 ```
-
 
