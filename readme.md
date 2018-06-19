@@ -10,7 +10,7 @@ This is the project containing Alda's webhook
 Webhook deployment with [zappa](https://github.com/Miserlou/Zappa)
 
 ```shell
-$ zappa init  
+$ zappa init
 $ zappa deploy
 ```
 
@@ -20,4 +20,8 @@ Debugging using [ngrok](https://ngrok.com/)
 ```shell
 $ ./ngrok http 8088
 ```
+#### Dialogflow
+Dialogflow's V2 API is being used.  
+A POST request is sent to dialogflow-backend.  
 
+Checkout [webhook requirements](https://dialogflow.com/) for more info.  
