@@ -196,7 +196,6 @@ def best_lenders(req):
                              'quickReplies': {
                                  'title': 'Ninguna entidad ofrece más de 60.000€ sin un aval hipotecario',
                                  'quickReplies': [
-                                 validNif = True
                                      'Quiero 60.000€',
                                      'Quiero menos de 60.000€',
                                      'Ayúdame'
