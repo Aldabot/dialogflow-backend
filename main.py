@@ -205,26 +205,5 @@ def best_lenders(req):
                      ]}))
 
 
-def validate_amount_term(req):
-    amount = req.get('queryResult').get('parameters').get('Amount').get('number')
-    term = req.get("queryResult").get('parameters').get('Term-days').get('number')
-    validAmount = True
-    validTerm = True
-    if amount > 300 or amount < 50:
-        validAmount = False
-    if term > 60:
-        validTerm = False
-
-    if validAmount & validTerm:
-        salida = make_response(jsonify(req.get('queryResult').get('fulfillmentMessages')))
-    else:
-        textoError = ''
-        if validAmount == False:
-            textoError = textoError + 'Solo podemos ofrecerte entre 50 y 300 Euros, indica otra cantidad por favor. '
-        if validTerm == False:
-            textoError = textoError + 'Lamentablemente no podemos ofrecerte más de 60 días. '
-        salida = make_response(jsonify({'fulfillmentText': textoError}))
-    return salida
-
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=8088)
