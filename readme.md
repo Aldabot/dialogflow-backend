@@ -7,10 +7,17 @@ This is the project containing Alda's webhook
 
 ### Instructions
 #### Deployment
-The deployment of the webhook is performed by using [zappa](https://github.com/Miserlou/Zappa)
+Webhook deployment with [zappa](https://github.com/Miserlou/Zappa)
 
 ```shell
 $ zappa init  
 $ zappa deploy
+```
+
+#### Debugging
+Debugging using [ngrok](https://ngrok.com/)
+
+```shell
+$ ./ngrok http 8088
 ```
 
