@@ -56,9 +56,9 @@ def best_lenders(req):
                                                   "quickReplies": {
                                                       "title": 'Puedo ayudarte a encontrar el mejor préstamo, a invertir, con la declaración de la renta y a saber si estás en Asnef',
                                                       'quickReplies': [
-                                                          'Quiero un préstamo',
+                                                          'Necesito un préstamo',
                                                           'Quiero invertir',
-                                                          'Declaració renta',
+                                                          'Declaración renta',
                                                           '¿Estoy en Asnef?',
                                                           'No me interesa'
                                                       ]
@@ -91,7 +91,7 @@ def best_lenders(req):
                                           {
                                               'text': {
                                                   'text': [
-                                                      'A continuación te muestro los mejores préstamos que te ofrecen ' + str(
+                                                      '¡Genial! A continuación te muestro los mejores préstamos que te ofrecen ' + str(
                                                           int(amount)) + '€ ordenados por precio (TAE)'
                                                   ]
                                               }
@@ -180,7 +180,7 @@ def best_lenders(req):
 
         response.append({'text': {
                               'text': [
-                                  'A continuación te muestro los mejores préstamos que te ofrecen ' +
+                                  '¡Genial! A continuación te muestro los mejores préstamos que te ofrecen ' +
                                   '{:n}'.format(amount) + '€ ordenados por precio (TAE)'
                               ]}})
 
