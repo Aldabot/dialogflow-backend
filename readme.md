@@ -9,7 +9,7 @@ Repository containing Alda's dailogflow webhook
 ```shell
 python -V
 ```
-Python3.6
+Python 3.6
 ```shell
 pip -V pip
 ```
@@ -20,7 +20,7 @@ $ pip install -r requirements.txt
 ```
 ### Deployment
 #### Zappa
-Webhook deployment to AWS lambda using [zappa](https://github.com/Miserlou/Zappa). Simpler than [serverless](https://serverless.com/) although it does not support different serverless architectures.  
+Webhook deployment to AWS lambda using [zappa](https://github.com/Miserlou/Zappa). Simpler than [serverless](https://serverless.com/) although no support for different serverless architectures.  
 
 ##### First time deployment  
 1. Set up AWS configuration profile
@@ -28,13 +28,15 @@ Webhook deployment to AWS lambda using [zappa](https://github.com/Miserlou/Zappa
 pip install awscli --upgrade --user
 aws configure
 ```
-2. Set up zappa configuration profile
+Introduce AWS keys
 
+2. Set up zappa configuration profile
 ```shell
 $ pip install zappa
 $ zappa init
 $ zappa deploy
 ```
+Introduce deployment characteristics
 
 ##### Later updates
 ```shell
