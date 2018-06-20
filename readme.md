@@ -1,6 +1,6 @@
 # Alda backend
 
-This is the project containing Alda's webhook
+Repository containing Alda's dailogflow webhook
 
 ## Website:
 * Find out more at [alda.bot](https://alda.bot)
