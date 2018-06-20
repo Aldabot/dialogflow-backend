@@ -153,7 +153,7 @@ def best_lenders(req):
                                           {
                                               'text': {
                                                   'text': [
-                                                      'Ten en cuenta que estos préstamos por importes tan pequeños empeoran tu historial crediticio y tienen intereses muy elevados'
+                                                      'Ten en cuenta que estos préstamos por importes tan pequeños empeoran tu historial crediticio y tienen unos intereses muy elevados'
                                                   ]
                                               }
                                           },
