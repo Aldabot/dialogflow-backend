@@ -131,8 +131,15 @@ def best_lenders(req):
                                               }
                                           },
                                           {
+                                              'text': {
+                                                  'text': [
+                                                      'Ten en cuenta que estos préstamos por importes tan pequeños empeoran tu historial crediticio y tienen intereses muy elevados.'
+                                                  ]
+                                              }
+                                          },
+                                          {
                                               "quickReplies": {
-                                                  "title": 'Ten en cuenta que estos préstamos empeoran tu historial crediticio. En ocasiones, el mejor préstamo es el que no se pide.',
+                                                  "title": 'En ocasiones, el mejor préstamo es el que no se pide.',
                                                   'quickReplies': [
                                                       'Gracias!',
                                                       'Estoy en ASNEF',
