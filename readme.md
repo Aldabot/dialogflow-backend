@@ -5,15 +5,41 @@ This is the project containing Alda's webhook
 ## Website:
 * Find out more at [alda.bot](https://alda.bot)
 
-### Instructions
-#### Deployment
-Webhook deployment with [zappa](https://github.com/Miserlou/Zappa)
+### Requirements
+```shell
+python -V
+```
+Python3.6
+```shell
+pip -V pip
+```
+pip 9.0.1  
 
 ```shell
+$ pip install -r requirements.txt
+```
+### Deployment
+#### Zappa
+Webhook deployment to AWS lambda using [zappa](https://github.com/Miserlou/Zappa). Simpler than [serverless](https://serverless.com/) although it does not support different serverless architectures.  
+
+##### First time deployment  
+1. Set up AWS configuration profile
+```shell
+pip install awscli --upgrade --user
+aws configure
+```
+2. Set up zappa configuration profile
+
+```shell
+$ pip install zappa
 $ zappa init
 $ zappa deploy
 ```
 
+##### Later updates
+```shell
+zappa update dev
+```
 #### Debugging
 ##### Flask
 [Flask](http://flask.pocoo.org/) is the framework used for the API deployment.  
