@@ -47,7 +47,27 @@ def best_lenders(req):
     try:
         amount = req.get('queryResult').get('parameters').get('amount').get('number')
     except AttributeError:
-        return 'amount not recognized'
+        print ('amount not recognized')
+        if req.get('queryResult').get('parameters').get('amount') != '':
+            print ('amount filled but not recognized')
+            return make_response(jsonify({'fulfillmentText': 'No te he entendido...',
+                                          'fulfillmentMessages': [
+                                              {
+                                                  "quickReplies": {
+                                                      "title": 'Puedo ayudarte a encontrar el mejor préstamo, a invertir, con la declaración de la renta y a saber si estás en Asnef',
+                                                      'quickReplies': [
+                                                          'Quiero un préstamo',
+                                                          'Quiero invertir',
+                                                          'Declaració renta',
+                                                          '¿Estoy en Asnef?',
+                                                          'No me interesa'
+                                                      ]
+                                                  }
+                                              }
+                                          ]}))
+        else:
+            print('amount is empty and not recognized')
+            return 'amount not recognized'
 
     if amount < 50:
         print('Amount under 50 euros')
@@ -133,22 +153,25 @@ def best_lenders(req):
                                           {
                                               'text': {
                                                   'text': [
-                                                      'Ten en cuenta que estos préstamos por importes tan pequeños empeoran tu historial crediticio y tienen intereses muy elevados.'
+                                                      'Ten en cuenta que estos préstamos por importes tan pequeños empeoran tu historial crediticio y tienen intereses muy elevados'
                                                   ]
                                               }
                                           },
                                           {
                                               "quickReplies": {
-                                                  "title": 'En ocasiones, el mejor préstamo es el que no se pide.',
+                                                  "title": 'En ocasiones, el mejor préstamo es el que no se pide',
                                                   'quickReplies': [
-                                                      'Gracias!',
+                                                      '¡Gracias!',
                                                       'Estoy en ASNEF',
-                                                      'Historial?',
+                                                      '¿Historial crediticio?',
                                                       'Más ayuda'
                                                   ]
                                               }
                                           }
-                                      ]}))
+                                      ],
+                                      }
+                                     )
+                             )
 
     if amount <= 50000:
         print('Amount between 300 and 50.000€')
