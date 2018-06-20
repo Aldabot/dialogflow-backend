@@ -8,6 +8,7 @@ import locale
 from flask import Flask, jsonify, make_response
 from flask import request
 
+
 app = Flask(__name__)
 
 locale.setlocale(locale.LC_ALL, 'es_ES.utf8')
@@ -71,7 +72,7 @@ def best_lenders(req):
                                               'text': {
                                                   'text': [
                                                       'A continuación te muestro los mejores préstamos que te ofrecen ' + str(
-                                                          int(amount)) + '€'
+                                                          int(amount)) + '€ ordenados por precio (TAE)'
                                                   ]
                                               }
                                           },
@@ -150,7 +151,7 @@ def best_lenders(req):
         response.append({'text': {
                               'text': [
                                   'A continuación te muestro los mejores préstamos que te ofrecen ' +
-                                  '{:n}'.format(amount) + '€'
+                                  '{:n}'.format(amount) + '€ ordenados por precio (TAE)'
                               ]}})
 
         lenders_df = pd.read_csv('https://s3-eu-west-1.amazonaws.com/aldachatbot/lenders.csv', delimiter=";", header=0)
@@ -179,8 +180,8 @@ def best_lenders(req):
             'quickReplies': {
                 'title': 'Además de estas opciones, es posible que tu banco te ofrezca un préstamo preconcedido: este tipo de préstamo es el más rápido pero también es el más caro!',
                 'quickReplies': [
-                    'Gracias!',
-                    'TAE?'
+                    '¡Gracias!',
+                    '¿TAE?'
                 ]
             }
         })
