@@ -19,13 +19,13 @@ $ zappa deploy
 [Flask](http://flask.pocoo.org/) is the framework used for the API deployment.  
 
 If process not closed properly by using <kbd>Ctrl</kbd> + <kbd>C</kbd>  
-1. Locate the process:
+1. Locate the process running on that port:
 ```shell
-ps -fA | grep python
+fuser 8088/tcp
 ```
 2. Kill the process:
 ```shell
-kill 81651
+fuser -k 8088/tcp
 ```
 
 ##### Ngrok
