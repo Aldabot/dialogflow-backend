@@ -151,15 +151,8 @@ def best_lenders(req):
                                               }
                                           },
                                           {
-                                              'text': {
-                                                  'text': [
-                                                      'Préstamos por importes tan pequeños tienen unos intereses muy elevados'
-                                                  ]
-                                              }
-                                          },
-                                          {
                                               "quickReplies": {
-                                                  "title": 'En ocasiones, el mejor préstamo es el que no se pide',
+                                                  "title": 'Préstamos por importes tan pequeños tienen unos intereses muy elevados. En ocasiones, el mejor préstamo es el que no se pide',
                                                   'quickReplies': [
                                                       '¡Gracias!',
                                                       '¿TAE?',
