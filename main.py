@@ -91,7 +91,7 @@ def best_lenders(req):
                                           {
                                               'text': {
                                                   'text': [
-                                                      '¡Genial! A continuación te muestro los mejores préstamos que te ofrecen ' + str(
+                                                      '¡Genial! Te muestro los mejores préstamos que ofrecen ' + str(
                                                           int(amount)) + '€ ordenados por precio (TAE)'
                                                   ]
                                               }
@@ -153,7 +153,7 @@ def best_lenders(req):
                                           {
                                               'text': {
                                                   'text': [
-                                                      'Ten en cuenta que estos préstamos por importes tan pequeños empeoran tu historial crediticio y tienen unos intereses muy elevados'
+                                                      'Préstamos por importes tan pequeños tienen unos intereses muy elevados'
                                                   ]
                                               }
                                           },
@@ -162,6 +162,7 @@ def best_lenders(req):
                                                   "title": 'En ocasiones, el mejor préstamo es el que no se pide',
                                                   'quickReplies': [
                                                       '¡Gracias!',
+                                                      '¿TAE?',
                                                       'Estoy en ASNEF',
                                                       '¿Historial crediticio?',
                                                       'Más ayuda'
