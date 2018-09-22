@@ -8,6 +8,7 @@ from flask import Flask, jsonify, make_response
 from flask import request
 
 from lenders.lenders import best_lenders
+from balance.balance import balance
 
 app = Flask(__name__)
 
@@ -34,6 +35,9 @@ def webhook():
     if action == 'action.alda.loan.application':
         print('Executing action.alda.loan.application')
         return best_lenders(req)
+    if action == 'action.alda.query.balance':
+        print('Executing action.alda.query.balance')
+        return balance(req)
     if action == 'action.dni.validation':
         return validateDni(req)
     if action == 'action.phone.validation':
