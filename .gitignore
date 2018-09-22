@@ -1,2 +1,6 @@
 .idea
+<<<<<<< HEAD
 /venv/
+=======
+/dialogflow_venv/
+>>>>>>> ae60f57644156ca238c8d649c86b71c15a9f03b7

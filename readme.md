@@ -1,10 +1,15 @@
 # Alda backend
 
+<<<<<<< HEAD
 This is the project containing Alda's dialogflow webhook.
+=======
+Repository containing Alda's dailogflow webhook
+>>>>>>> ae60f57644156ca238c8d649c86b71c15a9f03b7
 
 ## Website:
 * Find out more at [alda.bot](https://alda.bot)
 
+<<<<<<< HEAD
 ## Development Steps
 1. Activate Virtual Environment
 ```
@@ -29,3 +34,69 @@ $ ./ngrok http 8088
 $ zappa init
 $ zappa deploy
 ```
+=======
+### Requirements
+```shell
+python -V
+```
+Python 3.6
+```shell
+pip -V pip
+```
+pip 9.0.1  
+
+```shell
+$ pip install -r requirements.txt
+```
+### Deployment
+#### Zappa
+Webhook deployment to AWS lambda using [zappa](https://github.com/Miserlou/Zappa). Simpler than [serverless](https://serverless.com/) although no support for different serverless architectures.  
+
+##### First time deployment  
+1. Set up AWS configuration profile
+```shell
+pip install awscli --upgrade --user
+aws configure
+```
+Introduce AWS keys
+
+2. Set up zappa configuration profile
+```shell
+$ pip install zappa
+$ zappa init
+$ zappa deploy
+```
+Introduce deployment characteristics
+
+##### Later updates
+```shell
+zappa update dev
+```
+#### Debugging
+##### Flask
+[Flask](http://flask.pocoo.org/) is the framework used for the API deployment.  
+
+If process not closed properly by using <kbd>Ctrl</kbd> + <kbd>C</kbd>  
+1. Locate the process running on that port:
+```shell
+fuser 8088/tcp
+```
+2. Kill the process:
+```shell
+fuser -k 8088/tcp
+```
+
+##### Ngrok
+Debugging using [ngrok](https://ngrok.com/)
+
+```shell
+$ ./ngrok http 8088
+```
+#### Dialogflow
+The NLP is done by Dialogflow.  
+
+In particular, Dialogflow's V2 API is being used.  
+A POST request is sent to dialogflow-backend.  
+
+Checkout [webhook requirements](https://dialogflow.com/) for more info.  
+>>>>>>> ae60f57644156ca238c8d649c86b71c15a9f03b7
