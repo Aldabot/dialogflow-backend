@@ -26,8 +26,7 @@ $ ./ngrok http 8088
 
 6. Deploy by using [zappa](https://github.com/Miserlou/Zappa)
 ```
-$ zappa init
-$ zappa deploy
+$ zappa update
 ```
 
 ### Requirements
