@@ -6,6 +6,7 @@ import locale
 from flask import Flask, jsonify, make_response
 from flask import request
 
+
 def best_lenders(req):
     try:
         amount = req.get('queryResult').get('parameters').get('amount').get('number')

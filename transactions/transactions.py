@@ -2,13 +2,13 @@ from flask import Flask, jsonify, make_response
 from flask import request
 
 
-def balance(req):
+def transactions(req):
 
     user_exists = False
 
     if user_exists == True:
         salida = make_response(jsonify(
-            {'fulfillmentText': 'Tu saldo actual es: XXX'}))
+            {'fulfillmentText': 'Tus movimientos: XXX'}))
         return salida
 
     if user_exists == False:
@@ -16,7 +16,7 @@ def balance(req):
                                       'fulfillmentMessages': [
                                           {
                                               'card': {
-                                                  'title': 'Para consultar tu saldo conecta tu banco 🔗',
+                                                  'title': 'Para consultar tus movimientos conecta tu banco 🔗',
                                                   'buttons': [
                                                       {
                                                           'text': 'Conectar',
