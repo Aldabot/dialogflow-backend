@@ -1,15 +1,10 @@
 # Alda backend
 
-<<<<<<< HEAD
 This is the project containing Alda's dialogflow webhook.
-=======
-Repository containing Alda's dailogflow webhook
->>>>>>> ae60f57644156ca238c8d649c86b71c15a9f03b7
 
 ## Website:
 * Find out more at [alda.bot](https://alda.bot)
 
-<<<<<<< HEAD
 ## Development Steps
 1. Activate Virtual Environment
 ```
@@ -34,7 +29,7 @@ $ ./ngrok http 8088
 $ zappa init
 $ zappa deploy
 ```
-=======
+
 ### Requirements
 ```shell
 python -V
@@ -45,10 +40,7 @@ pip -V pip
 ```
 pip 9.0.1  
 
-```shell
-$ pip install -r requirements.txt
-```
-### Deployment
+### Append
 #### Zappa
 Webhook deployment to AWS lambda using [zappa](https://github.com/Miserlou/Zappa). Simpler than [serverless](https://serverless.com/) although no support for different serverless architectures.  
 
@@ -88,7 +80,6 @@ fuser -k 8088/tcp
 
 ##### Ngrok
 Debugging using [ngrok](https://ngrok.com/)
-
 ```shell
 $ ./ngrok http 8088
 ```
@@ -98,5 +89,4 @@ The NLP is done by Dialogflow.
 In particular, Dialogflow's V2 API is being used.  
 A POST request is sent to dialogflow-backend.  
 
-Checkout [webhook requirements](https://dialogflow.com/) for more info.  
->>>>>>> ae60f57644156ca238c8d649c86b71c15a9f03b7
+Checkout [webhook requirements](https://dialogflow.com/) for more info.
