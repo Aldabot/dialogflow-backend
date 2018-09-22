@@ -15,14 +15,26 @@ def balance(req):
         return make_response(jsonify({'fulfillmentText': '',
                                       'fulfillmentMessages': [
                                           {
-                                              'card': {
-                                                  'title': 'Para consultar tu saldo conecta tu banco 🔗',
-                                                  'buttons': [
-                                                      {
-                                                          'text': 'Conectar',
-                                                          'postback': 'https://www.alda.bot/'
-                                                      }
-                                                  ]
+                                              'platform': 'FACEBOOK',
+                                              'payload': {
+                                                          "facebook": {
+                                                              "attachment": {
+                                                                  "type": "template",
+                                                                  "payload": {
+                                                                      "template_type": "button",
+                                                                      "text": "'Para saber tu saldo conecta tu banco 🔗",
+                                                                      "buttons": [
+                                                                          {
+                                                                              "type": "web_url",
+                                                                              "url": "https://www.alda.bot/faq",
+                                                                              "title": "Conectar",
+                                                                              "webview_height_ratio": "full",
+                                                                              "messenger_extensions": "false"
+                                                                          }
+                                                                      ]
+                                                                  }
+                                                              }
+                                                          }
                                               }
                                           }
                                       ]
