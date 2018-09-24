@@ -41,3 +41,31 @@ def transactions(req):
                                       }
                                      )
                              )
+
+def fake_transactions(req):
+    return make_response(jsonify({'fulfillmentText': '',
+                                  'fulfillmentMessages': [
+                                      {
+                                          'platform': 'FACEBOOK',
+                                          'payload': {
+                                              "facebook": {
+"text": "Lo tengo.\n\n\🚀 143€ Transportes\n🍽️ 189€ Restaurantes\n🛍️ 46€ Supermercado\n🥜 60€ Otros",
+                                                      "quick_replies": [
+                                                          {
+                                                              "content_type": "text",
+                                                              "title": "Enviar dinero💸",
+                                                              "payload": "where_is_my_money_going"
+                                                          },
+                                                          {
+                                                              "content_type": "text",
+                                                              "title": "Quiero ahorrar📈 ",
+                                                              "payload": "Send_money"
+                                                          }
+                                                      ]
+                                                  }
+                                          }
+                                      }
+                                  ]
+                                  }
+                                 )
+                         )

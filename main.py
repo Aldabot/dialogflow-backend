@@ -9,7 +9,7 @@ from flask import request
 
 from lenders.lenders import best_lenders
 from balance.balance import balance, fake_balance
-from transactions.transactions import transactions
+from transactions.transactions import transactions, fake_transactions
 
 app = Flask(__name__)
 
@@ -38,7 +38,7 @@ def webhook():
     if action == 'action.alda.query.balance':
         return fake_balance(req)
     if action == 'action.alda.query.expenses':
-        return transactions(req)
+        return fake_transactions(req)
     if action == 'action.dni.validation':
         return validateDni(req)
     if action == 'action.phone.validation':
