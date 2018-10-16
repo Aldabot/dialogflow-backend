@@ -50,7 +50,7 @@ def fake_balance(req):
                                           'platform': 'FACEBOOK',
                                           'payload': {
                                               "facebook": {
-"text": "Buenas Gabriel!👋\n\n\
+"text": "Aqui va!👋\n\n\
 Visa Electron (7394): -524€\nVisa Classic (3780): 0€\nCuenta (9373): 1.612€\nCuenta (2376): 1.500€\nCuenta Imagin: 100€\n\n\
 Total: 2.688€ 📈 ",
 
@@ -63,8 +63,9 @@ Total: 2.688€ 📈 ",
                                                           {
                                                               "content_type": "text",
                                                               "title": "Enviar dinero💸",
-                                                              "payload": "Send_money"
-                                                          }
+                                                              "payload": "send_money"
+                                                          },
+
                                                       ]
                                                   }
                                           }

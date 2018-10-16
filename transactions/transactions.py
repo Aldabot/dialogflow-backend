@@ -42,6 +42,7 @@ def transactions(req):
                                      )
                              )
 
+
 def fake_transactions(req):
     return make_response(jsonify({'fulfillmentText': '',
                                   'fulfillmentMessages': [
@@ -49,20 +50,20 @@ def fake_transactions(req):
                                           'platform': 'FACEBOOK',
                                           'payload': {
                                               "facebook": {
-"text": "Lo tengo.\n\n\🚀 143€ Transportes\n🍽️ 189€ Restaurantes\n🛍️ 46€ Supermercado\n🥜 60€ Otros",
+                                                  "text": "Este mes👇\n\n🚀 143€ Transportes\n🍽️ 189€ Restaurantes\n🛒 96€ Supermercado",
                                                       "quick_replies": [
                                                           {
                                                               "content_type": "text",
-                                                              "title": "Enviar dinero💸",
-                                                              "payload": "where_is_my_money_going"
+                                                              "title": "Consultar saldo💰",
+                                                              "payload": "check_balance"
                                                           },
                                                           {
                                                               "content_type": "text",
-                                                              "title": "Quiero ahorrar📈 ",
-                                                              "payload": "Send_money"
+                                                              "title": "Quiero ahorrar📈",
+                                                              "payload": "save_money"
                                                           }
                                                       ]
-                                                  }
+                                              }
                                           }
                                       }
                                   ]
